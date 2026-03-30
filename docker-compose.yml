@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  eatwise:
+    build: .
+    container_name: eatwise
+    restart: unless-stopped
+    ports:
+      - "8082:3000"
+    environment:
+      - ANTHROPIC_API_KEY=76a615004da286b1e7dc98b977038d4e7f4fc4df6667249f
+      - ANTHROPIC_BASE_URL=http://172.17.0.1:18789/v1
+      - NODE_ENV=production
